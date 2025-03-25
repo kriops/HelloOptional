@@ -9,22 +9,22 @@ import org.junit.jupiter.api.Test;
 class RegularPolygonTest {
   static final Integer numSides = 2;
   static final Double sideLength = 2.0;
-  static final RegularPolygon shape = new RegularPolygon(numSides, sideLength);
-  
 
   @Test
-  void convertAndDescribe() {
-    final var areaInCm = shape.getArea();
-    final var areaInM = Utils.convertSquareCmToSquareMeter(areaInCm);
-    final var areainSquareMeterAsString =
+  void imperativeDemo() {
+    final RegularPolygon shape = new RegularPolygon(numSides, sideLength);
+    final Double areaInCm = shape.getArea();
+    final Double areaInM = Utils.convertSquareCmToSquareMeter(areaInCm);
+    final String areainSquareMeterAsString =
         Objects.isNull(areaInM) ? "Undefined" : areaInM.toString();
     assertNull(areaInM);
+    assertEquals("Undefined", areainSquareMeterAsString);
   }
 
   @Test
-  void convertAndDescribeWithOptional() {
+  void optionalDemo() {
     final var maybeAreainSquareMeterAsString =
-        Optional.of(shape)
+        Optional.of(new RegularPolygon(numSides, sideLength))
             .map(RegularPolygon::getArea)
             .map(Utils::convertSquareCmToSquareMeter)
             .map(areaInM -> Objects.isNull(areaInM) ? "Undefined" : areaInM.toString());

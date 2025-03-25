@@ -1,2 +1,2 @@
 This repository contains code for my blog
-post: [The Issue with Java's Optional](kristofferopsahl.com/the-issue-with-javas-optional/).
+post: [Java's Optional has a Problem](kristofferopsahl.com/the-issue-with-javas-optional/).
